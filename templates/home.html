@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% block content %}
+<body>
+  {% if user.is_authenticated %}
+  <!--<p>Welcome {{ user.username }} !!!</p>-->
+  <!--<p>Last login: {{ user.last_login | date:"Y-m-d H:i:s" }}</p>-->
+  <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">やること</th>
+          <th scope="col">作成日</th>
+          <th scope="col">操作</th scope="col">
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in todos %}
+        <tr>
+          <th scope="row">{{ post.message }}</th scope="row">
+          <td>{{ post.created_at }}</td>
+          <td>
+           <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger"><i class="fas fa-check"></i> 完了</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+  </body>
+{% endblock %}

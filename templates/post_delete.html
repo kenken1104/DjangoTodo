@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">{% csrf_token %}
+<p>"{{ object }}"を完了しますか?</p>
+    <button type="submit" class="btn btn-danger">
+    <i class="fas fa-check"></i> 完了
+    </button>
+</form>
+{% endblock %}
