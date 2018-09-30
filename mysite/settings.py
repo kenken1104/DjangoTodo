@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # new
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.twitter',
-    'whitenoise.runserver_nostaic'
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
