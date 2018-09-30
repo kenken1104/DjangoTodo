@@ -2,10 +2,7 @@
 {% load socialaccount %}
 {% block content %}
 <body>
-  {% if user.is_authenticated %}
-  <p>Welcome {{ user.username }} !!!</p>
-  <p>Last login: {{ user.last_login | date:"Y-m-d H:i:s" }}</p>
-  <a href="{% url 'post_new' %}" class="btn btn-success ml-2"><i class="fas fa-pen-square"></i> Todoを作成</a>
+{% if user.is_authenticated %}
 {% for post in todos %}
 <div class="post-entry">
     <h2>・{{ post.message }}</h2>
@@ -15,7 +12,6 @@
 </div>
 {% endfor %}
   {% endif %}
-ようこそ sample
-test2
+ようこそ
   </body>
 {% endblock %}
